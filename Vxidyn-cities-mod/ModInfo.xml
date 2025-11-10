@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <ModInfo>
+        <Name value="Max City World"/>
+        <Description value="Adds a fully urban 2K RWG preset with maximum city generation."/>
+        <Author value="Vxidyn"/>
+        <Version value="1.0"/>
+        <GameVersion value="Alpha 22.4 (b7)"/>
+    </ModInfo>
+</xml>
+

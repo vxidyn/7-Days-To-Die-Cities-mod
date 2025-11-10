@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rwgmixer>
+    <!-- ===== Custom Preset: Max City World ===== -->
+    <presets>
+        <preset name="Max City World" display_name="Max City World (2K All City)">
+            <property name="world_size" value="2048"/>
+            <property name="biome_generation" value="default"/>
+            <property name="city_density" value="ultra"/>
+            <property name="town_density" value="ultra"/>
+            <property name="wilderness_density" value="none"/>
+            <property name="hub_cell_size" value="1"/>
+            <property name="hub_cell_padding" value="0"/>
+            <property name="city_tile_chance" value="1.0"/>
+            <property name="town_tile_chance" value="1.0"/>
+            <property name="rural_tile_chance" value="0.0"/>
+            <property name="wilderness_tile_chance" value="0.0"/>
+        </preset>
+    </presets>
+
+    <!-- ===== Override City/Town Definitions ===== -->
+    <hubs>
+        <hub name="citylarge">
+            <property name="probability" value="1.0"/>
+            <property name="min_count" value="30"/>
+            <property name="max_count" value="999"/>
+            <property name="min_tiles" value="12"/>
+            <property name="max_tiles" value="18"/>
+        </hub>
+
+        <hub name="citysmall">
+            <property name="probability" value="1.0"/>
+            <property name="min_count" value="20"/>
+            <property name="max_count" value="999"/>
+            <property name="min_tiles" value="8"/>
+            <property name="max_tiles" value="12"/>
+        </hub>
+
+        <!-- Remove wilderness hubs -->
+        <hub name="wilderness">
+            <property name="probability" value="0"/>
+        </hub>
+        <hub name="rural">
+            <property name="probability" value="0"/>
+        </hub>
+    </hubs>
+
+    <!-- ===== Max POI Density ===== -->
+    <tiles>
+        <tile name="city" chance="1.0">
+            <property name="poi_density" value="1.0"/>
+        </tile>
+    </tiles>
+</rwgmixer>
