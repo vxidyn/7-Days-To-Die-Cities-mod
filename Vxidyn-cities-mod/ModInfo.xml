@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xml>
-    <ModInfo>
-        <Name value="Max City World"/>
-        <Description value="Adds a fully urban 2K RWG preset with maximum city generation."/>
-        <Author value="Vxidyn"/>
-        <Version value="1.0"/>
-        <GameVersion value="Alpha 22.4 (b7)"/>
-    </ModInfo>
-</xml>
-
+<modinfo>
+    <name value="Vxidyn Cities Mod" />
+    <description value="Adds a selectable RWG preset for 7 Days to Die Alpha 22.4 — 2048x2048 all-city world with no wilderness." />
+    <author value="vxidyn" />
+    <version value="1.0" />
+    <game_version value="Alpha 22.4 (b7)" />
+</modinfo>

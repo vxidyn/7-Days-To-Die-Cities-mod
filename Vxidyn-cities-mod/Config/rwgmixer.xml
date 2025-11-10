@@ -1,53 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rwgmixer>
-    <!-- ===== Custom Preset: Max City World ===== -->
+    <!--
+        Max City World (2K All City)
+        Author: vxidyn
+        Version: 1.0
+        Game: 7 Days to Die Alpha 22.4 (b7)
+        Description: Generates a 2048x2048 world that is entirely city — no wilderness, no rural areas, full POI density.
+    -->
+
     <presets>
-        <preset name="Max City World" display_name="Max City World (2K All City)">
+        <preset name="Max City World (2K All City)">
+            <property name="base_preset" value="default"/>
             <property name="world_size" value="2048"/>
-            <property name="biome_generation" value="default"/>
-            <property name="city_density" value="ultra"/>
-            <property name="town_density" value="ultra"/>
-            <property name="wilderness_density" value="none"/>
-            <property name="hub_cell_size" value="1"/>
-            <property name="hub_cell_padding" value="0"/>
+            <property name="allow_city_generation" value="true"/>
+            <property name="generate_hub_cells" value="true"/>
+            <property name="hub_cell_density" value="1.0"/>
             <property name="city_tile_chance" value="1.0"/>
             <property name="town_tile_chance" value="1.0"/>
             <property name="rural_tile_chance" value="0.0"/>
             <property name="wilderness_tile_chance" value="0.0"/>
+            <property name="poi_density" value="1.0"/>
+            <property name="max_city_size" value="999"/>
+            <property name="min_city_size" value="128"/>
+            <property name="city_spacing" value="0.1"/>
+            <property name="hub_layout" value="grid"/>
+            <property name="allow_trader_generation" value="true"/>
         </preset>
     </presets>
 
-    <!-- ===== Override City/Town Definitions ===== -->
-    <hubs>
-        <hub name="citylarge">
-            <property name="probability" value="1.0"/>
-            <property name="min_count" value="30"/>
-            <property name="max_count" value="999"/>
-            <property name="min_tiles" value="12"/>
-            <property name="max_tiles" value="18"/>
-        </hub>
-
-        <hub name="citysmall">
-            <property name="probability" value="1.0"/>
-            <property name="min_count" value="20"/>
-            <property name="max_count" value="999"/>
-            <property name="min_tiles" value="8"/>
-            <property name="max_tiles" value="12"/>
-        </hub>
-
-        <!-- Remove wilderness hubs -->
-        <hub name="wilderness">
-            <property name="probability" value="0"/>
-        </hub>
-        <hub name="rural">
-            <property name="probability" value="0"/>
-        </hub>
-    </hubs>
-
-    <!-- ===== Max POI Density ===== -->
-    <tiles>
-        <tile name="city" chance="1.0">
+    <!-- Hub rules -->
+    <hub_rules>
+        <hub_rule name="city">
+            <property name="min_count" value="10"/>
+            <property name="max_count" value="16"/>
+            <property name="hub_cell_density" value="1.0"/>
+            <property name="tile_density" value="1.0"/>
+            <property name="hub_layout" value="grid"/>
             <property name="poi_density" value="1.0"/>
-        </tile>
-    </tiles>
+            <property name="has_trader" value="true"/>
+        </hub_rule>
+
+        <hub_rule name="town">
+            <property name="min_count" value="0"/>
+            <property name="max_count" value="0"/>
+        </hub_rule>
+
+        <hub_rule name="wilderness">
+            <property name="min_count" value="0"/>
+            <property name="max_count" value="0"/>
+        </hub_rule>
+    </hub_rules>
+
+    <!-- Biome generation -->
+    <biome_generation>
+        <property name="allow_biomes" value="true"/>
+        <property name="use_vanilla_biome_distribution" value="true"/>
+    </biome_generation>
+
+    <!-- Global worldgen rules -->
+    <world_generation_rules>
+        <property name="max_tiles" value="24"/>
+        <property name="min_tiles" value="16"/>
+        <property name="generate_roads" value="true"/>
+        <property name="main_road_density" value="1.0"/>
+        <property name="secondary_road_density" value="1.0"/>
+        <property name="river_generation" value="true"/>
+        <property name="poi_density" value="1.0"/>
+        <property name="trader_density" value="1.0"/>
+        <property name="wilderness_density" value="0.0"/>
+        <property name="city_density" value="1.0"/>
+    </world_generation_rules>
 </rwgmixer>
